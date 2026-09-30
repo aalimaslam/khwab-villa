@@ -1,0 +1,26 @@
+---
+const reviews = [
+  ['Rohit Thakur', 'RT', 'Khwab Villa is an absolute gem! The location is breathtaking, surrounded by mountains and lush gardens. The rooms were spacious, well-maintained, and beautifully decorated. Loved the bonfire and BBQ setup in the evenings. A perfect getaway for anyone looking for peace and luxury!'],
+  ['Neha Kapoor', 'NK', 'An unforgettable experience! The villa is a blend of modern comfort and Kashmiri heritage. The staff was friendly, and the food was delicious. Waking up to the mountain view from the balcony was a dream. Highly recommended for families and groups!'],
+];
+---
+<section class="section reviews">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="kicker reveal">Guest Stories</p>
+      <h2 class="reveal">Words From <em>Our Guests</em></h2>
+    </div>
+    <div class="reviews__grid">
+      {reviews.map(([name, initials, text], i) => (
+        <figure class="review reveal" style={`--d:${i * 0.1}s`}>
+          <svg class="q"><use href="#i-quote" /></svg>
+          <blockquote>{text}</blockquote>
+          <figcaption>
+            <span class="av">{initials}</span>
+            <div><strong>{name}</strong><span class="stars">{[1, 2, 3, 4, 5].map(() => <svg><use href="#i-star" /></svg>)}</span></div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

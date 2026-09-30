@@ -1,0 +1,47 @@
+---
+import { img, ROOM_AMENITIES, SITE } from '../site';
+const slides = [
+  ['bedroom-1', 'Super Deluxe room with king bed and carved khatamband ceiling'],
+  ['bedroom-6', 'Bedroom with mountain painting and blue accent wall'],
+  ['bedroom-3', 'Bedroom with work desk and wardrobe'],
+  ['bedroom-7', 'Sunlit bedroom with large windows'],
+  ['living-room', 'Living room with fireplace and teal sofas'],
+  ['bathroom-1', 'Modern attached bathroom with vessel sink'],
+];
+---
+<section class="section rooms" id="rooms">
+  <div class="container">
+    <div class="section-head section-head--light">
+      <div>
+        <p class="kicker reveal">Accommodation</p>
+        <h2 class="reveal">Super Deluxe <em>Rooms</em></h2>
+      </div>
+      <p class="reveal">Hand-carved wooden beds, Kashmiri khatamband ceilings and private balconies that open onto the mountains.</p>
+    </div>
+
+    <div class="rooms__grid">
+      <div class="slider reveal" data-slider>
+        <div class="slider__track">
+          {slides.map(([s, alt], i) => <img src={img(s)} alt={alt} loading={i ? 'lazy' : 'eager'} />)}
+        </div>
+        <button class="icon-btn icon-btn--light slider__prev" aria-label="Previous photo"><svg><use href="#i-left" /></svg></button>
+        <button class="icon-btn icon-btn--light slider__next" aria-label="Next photo"><svg><use href="#i-right" /></svg></button>
+        <div class="slider__count"><span data-now>01</span> / {String(slides.length).padStart(2, '0')}</div>
+      </div>
+
+      <div class="rooms__info reveal">
+        <div class="price">
+          <span>From</span>
+          <strong>{SITE.price}<sup>*</sup></strong>
+          <span>per room / night · all taxes extra</span>
+        </div>
+        <p>The Super Deluxe Rooms offer a perfect blend of elegance and comfort — plush king-size beds, air conditioning, Wi-Fi, TV and a private balcony with stunning mountain views, plus a workstation, wardrobe, geyser, toiletries and a cozy seating area.</p>
+        <ul class="amen">{ROOM_AMENITIES.map((a) => <li>{a}</li>)}</ul>
+        <div class="thumbs" data-thumbs>
+          {slides.map(([s], i) => <button class:list={{ 'is-active': i === 0 }} aria-label={`Show photo ${i + 1}`}><img src={img(s)} alt="" loading="lazy" /></button>)}
+        </div>
+        <a href="/contact/#reserve" class="btn btn--cream">Reserve This Room <svg><use href="#i-arrow" /></svg></a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import { img } from '../site';
+interface Props { full?: boolean }
+const { full = false } = Astro.props;
+---
+<section class="section about" id="about">
+  <div class="container about__grid">
+    <div class="about__media reveal">
+      <img class="about__main" src={img('front-view-2')} alt="Khwab Villa's traditional wooden façade framed by pines" loading="lazy" />
+      <img class="about__sub" src={img('blossom-view')} alt="Khwab Villa behind blossoming spring trees" loading="lazy" />
+      <div class="about__badge">
+        <svg><use href="#f-mountain" /></svg>
+        <strong>Preng</strong><span>Kangan, Ganderbal</span>
+      </div>
+    </div>
+    <div class="about__copy">
+      <p class="kicker reveal">Welcome to Khwab Villa</p>
+      <h2 class="reveal">A Dream Stay in <em>Kashmir’s Serenity</em></h2>
+      <p class="lead reveal">Surrounded by breathtaking mountains, lush gardens and the serene Sindh River, this exquisite five-bedroom villa offers a peaceful escape from city life.</p>
+      <p class="reveal">Behind its traditional wooden façade you’ll find elegantly designed interiors, a spacious front lawn, four enchanting gardens filled with walnut, cherry and apricot trees, and a cozy library for slow afternoons.</p>
+      {full && (
+        <>
+          <p class="reveal">Designed for both comfort and convenience, Khwab Villa is equipped with Wi-Fi, air conditioning, a workstation and a music system. Unwind in the gazebo, enjoy a bonfire under the stars, or relish a BBQ evening in the beautiful outdoor space. A well-stocked games room with board games makes it ideal for families and groups.</p>
+          <p class="reveal">With Manasbal Lake, Naranag Temple and Sonmarg all within reach, Khwab Villa is your gateway to the untouched beauty of Ganderbal district — and a luxurious home away from home.</p>
+        </>
+      )}
+      <ul class="ticks reveal">
+        <li><svg><use href="#i-check" /></svg>Kashmiri heritage architecture</li>
+        <li><svg><use href="#i-check" /></svg>Games room &amp; cozy library</li>
+        <li><svg><use href="#i-check" /></svg>Ideal for families &amp; groups</li>
+        <li><svg><use href="#i-check" /></svg>Gateway to Sonmarg &amp; Manasbal</li>
+      </ul>
+      <a href={full ? '/contact/#reserve' : '/about/'} class="btn btn--olive reveal">{full ? 'Plan Your Stay' : 'Our Story'} <svg><use href="#i-arrow" /></svg></a>
+    </div>
+  </div>
+</section>

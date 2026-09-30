@@ -1,0 +1,19 @@
+---
+import { NAV } from '../site';
+
+interface Props { floating?: boolean }
+const { floating = false } = Astro.props;
+const path = Astro.url.pathname.replace(/\/?$/, '/');
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<header class:list={['topbar', { 'topbar--float': floating, show: !floating }]} id="topbar">
+  <a href="/" class="brand"><span>Khwab Villa</span></a>
+  <nav class="topbar__nav" id="topnav" aria-label="Main">
+    {NAV.map((n) => <a href={n.href} class:list={{ 'is-active': isActive(n.href) }}>{n.label}</a>)}
+    <a href="/contact/" class="topbar__mobile-only">Contact</a>
+  </nav>
+  <div class="topbar__end">
+    <a href="/contact/#reserve" class="btn btn--olive btn--sm">Reserve</a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu" /></svg></button>
+  </div>
+</header>

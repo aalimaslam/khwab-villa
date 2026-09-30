@@ -1,0 +1,39 @@
+---
+import { SITE } from '../site';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="/" class="brand brand--light"><span>Khwab Villa</span></a>
+      <p>Nestled in Ganderbal’s scenic beauty, Khwab Villa features spacious rooms, modern amenities, a gazebo and a bonfire setup — a peaceful yet luxurious escape amidst nature.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="/about/">About</a>
+      <a href="/rooms/">Rooms</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/attractions/">Attractions</a>
+      <a href="/blog/">Blogs</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      {SITE.phones.map((p) => <a href={`tel:${p.replace(/-/g, '')}`}>{p}</a>)}
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <a href="/contact/">Reservations</a>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>Preng, Kangan<br />Ganderbal, Jammu &amp; Kashmir<br />{SITE.address.postalCode}</p>
+      <a href={SITE.maps} target="_blank" rel="noopener">Open in Maps →</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <div class="footer__meta">
+      <span>© {year} Khwab Villa. All rights reserved.</span>
+      <span class="credit">Designed &amp; developed with care by <a href="https://growsharks.com" target="_blank" rel="noopener">GrowSharks</a></span>
+      <span><a href="/sitemap.xml">Sitemap</a> · <a href="/rss.xml">RSS</a> · <a href="/llms.txt">llms.txt</a></span>
+    </div>
+    <span class="footer__big" aria-hidden="true">Khwab Villa</span>
+  </div>
+</footer>

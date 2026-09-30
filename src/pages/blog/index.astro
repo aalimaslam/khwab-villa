@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import PostCard from '../../components/PostCard.astro';
+import { img } from '../../site';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const rest = posts.filter((p) => p !== featured);
+const categories = [...new Set(posts.map((p) => p.data.category))];
+---
+<Base title="Blogs — Kashmir Travel Guides" description="Travel guides and stories from Khwab Villa: the best time to visit Kashmir, day trips to Sonmarg and Manasbal, Kashmiri cuisine, packing lists and more.">
+  <PageHero kicker="Our Blogs" title="Stories from <em>the Valley</em>" image={img('balcony-view')} text="Guides, itineraries and slow-travel notes from Kangan and beyond." crumbs={[{ href: '/blog/', label: 'Blogs' }]} />
+  <section class="section blog-list">
+    <div class="container">
+      <div class="filters filters--blog reveal" data-blog-filters>
+        <button class="is-active" data-f="all">All</button>
+        {categories.map((c) => <button data-f={c}>{c}</button>)}
+      </div>
+      <div data-cat={featured.data.category}><PostCard post={featured} large /></div>
+      <div class="post-grid">
+        {rest.map((p) => <div data-cat={p.data.category}><PostCard post={p} /></div>)}
+      </div>
+    </div>
+  </section>
+</Base>

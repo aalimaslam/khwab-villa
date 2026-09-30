@@ -1,0 +1,23 @@
+---
+import { ATTRACTIONS, img } from '../site';
+---
+<section class="section explore" id="explore">
+  <div class="container explore__grid">
+    <div class="explore__media reveal">
+      <img src={img('drone-night')} alt="Khwab Villa lit up in the valley at dusk" loading="lazy" />
+      <div class="explore__note"><strong>Sindh River</strong><span>Within walking distance</span></div>
+    </div>
+    <div>
+      <p class="kicker reveal">Nearby Attractions</p>
+      <h2 class="reveal">Your Gateway to <em>Ganderbal</em></h2>
+      <div class="acc">
+        {ATTRACTIONS.map((a, i) => (
+          <details class="reveal" open={i === 0}>
+            <summary><span class="n">{String(i + 1).padStart(2, '0')}</span><span class="t">{a.name}</span><span class="d">{a.distance}</span></summary>
+            <p>{a.text}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

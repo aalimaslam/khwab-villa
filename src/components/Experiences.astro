@@ -1,0 +1,28 @@
+---
+import { img } from '../site';
+const items = [
+  ['bonfire-villa', 'Bonfire Under the Stars', 'Gather around a crackling fire as the mountains fade to silhouettes.', 'Bonfire on the lawn with the villa lit in the background'],
+  ['garden-table', 'Breakfast in the Orchard', 'Fresh fruit, pastries and juice laid out beneath walnut and apricot trees.', 'Breakfast table set on the garden lawn'],
+  ['chef-breakfast', 'Chef-Served BBQ', 'Relish a BBQ evening and home-cooked meals prepared by our in-house chef.', 'Chef serving a breakfast spread outdoors'],
+  ['balcony-view', 'Balcony Mountain Views', 'Sip kahwa on your private balcony with the mountains on the horizon.', 'Balcony overlooking the valley and mountains'],
+];
+---
+<section class="section" id="experiences">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="kicker reveal">Experiences</p>
+        <h2 class="reveal">Moments Made <em>for Memories</em></h2>
+      </div>
+      <p class="reveal">From firelit evenings to breakfasts served in the orchard, every day at Khwab Villa is shaped by the valley around it.</p>
+    </div>
+    <div class="exp">
+      {items.map(([src, title, text, alt], i) => (
+        <article class="exp__card reveal" style={`--d:${i * 0.1}s`}>
+          <img src={img(src)} alt={alt} loading="lazy" />
+          <div><span>{String(i + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

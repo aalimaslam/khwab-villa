@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { post: CollectionEntry<'blog'>; large?: boolean }
+const { post, large = false } = Astro.props;
+const date = post.data.pubDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<a href={`/blog/${post.id}/`} class:list={['post-card', 'reveal', { 'post-card--large': large }]}>
+  <div class="post-card__img"><img src={post.data.cover} alt={post.data.coverAlt} loading="lazy" /><span class="chip">{post.data.category}</span></div>
+  <div class="post-card__body">
+    <div class="post-meta"><time datetime={post.data.pubDate.toISOString()}>{date}</time><span>·</span><span>{post.data.readingTime}</span></div>
+    <h3>{post.data.title}</h3>
+    <p>{post.data.description}</p>
+    <span class="post-card__more">Read article <svg><use href="#i-arrow" /></svg></span>
+  </div>
+</a>

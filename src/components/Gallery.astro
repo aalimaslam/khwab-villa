@@ -1,0 +1,32 @@
+---
+import { GALLERY, img } from '../site';
+interface Props { limit?: number; heading?: boolean }
+const { limit, heading = true } = Astro.props;
+const items = limit ? GALLERY.slice(0, limit) : GALLERY;
+// Repeating 10-tile pattern that fills a 4-column grid exactly (16 cells)
+const SIZES = ['big', 'tall', '', '', '', 'wide', '', 'tall', '', ''];
+---
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        {heading && <><p class="kicker reveal">Gallery</p><h2 class="reveal">A Glimpse of <em>Khwab Villa</em></h2></>}
+      </div>
+      <div class="filters reveal" data-filters>
+        <button class="is-active" data-f="all">All</button>
+        <button data-f="villa">Villa</button>
+        <button data-f="rooms">Rooms</button>
+        <button data-f="dining">Dining</button>
+        <button data-f="evenings">Evenings</button>
+      </div>
+    </div>
+    <div class="masonry" data-masonry>
+      {items.map((g, i) => (
+        <a href={img(g.src)} data-cat={g.cat} data-cap={g.cap} class={SIZES[i % SIZES.length]}>
+          <img src={img(g.src)} alt={g.cap} loading="lazy" />
+        </a>
+      ))}
+    </div>
+    {limit && <div class="center-cta"><a href="/gallery/" class="btn btn--olive">See Full Gallery <svg><use href="#i-arrow" /></svg></a></div>}
+  </div>
+</section>

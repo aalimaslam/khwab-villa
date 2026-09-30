@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Reserve from '../components/Reserve.astro';
+import { img, SITE } from '../site';
+---
+<Base title="Contact & Reservations" description={`Reserve your stay at Khwab Villa, Preng, Kangan. Call ${SITE.phones.join(' / ')} or email ${SITE.email}.`}>
+  <PageHero kicker="Contact" title="Plan Your <em>Stay</em>" image={img('bonfire-villa')} crumbs={[{ href: '/contact/', label: 'Contact' }]} />
+  <div class="spacer"></div>
+  <Reserve />
+  <section class="section map-section">
+    <div class="container">
+      <div class="map">
+        <iframe title="Map to Khwab Villa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Preng,+Kangan,+Ganderbal,+Jammu+and+Kashmir&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</Base>

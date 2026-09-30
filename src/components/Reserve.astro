@@ -1,0 +1,40 @@
+---
+import { img, SITE } from '../site';
+---
+<section class="section reserve" id="reserve">
+  <div class="container reserve__card reveal">
+    <div class="reserve__img">
+      <img src={img('night-view')} alt="Khwab Villa at dusk" loading="lazy" />
+      <div class="reserve__contact">
+        <p class="kicker kicker--light">Need help?</p>
+        <h3>Talk to us directly</h3>
+        {SITE.phones.map((p) => <a href={`tel:${p.replace(/-/g, '')}`}><svg><use href="#i-phone" /></svg>{p}</a>)}
+        <a href={`mailto:${SITE.email}`}><svg><use href="#i-mail" /></svg>{SITE.email}</a>
+        <a href={SITE.maps} target="_blank" rel="noopener"><svg><use href="#i-pin" /></svg>{SITE.address.full}</a>
+      </div>
+    </div>
+    <form class="reserve__form" data-reserve data-wa={SITE.whatsapp} data-email={SITE.email}>
+      <p class="kicker">Reservation</p>
+      <h2>Reserve Your <em>Dream Holiday</em></h2>
+      <div class="grid2">
+        <label>Check in<input type="date" name="checkin" required /></label>
+        <label>Check out<input type="date" name="checkout" required /></label>
+      </div>
+      <div class="grid3">
+        <label>Adults<select name="adults">{[1, 2, 3, 4, 5, 6, 8, 10].map((n) => <option selected={n === 2}>{n}</option>)}</select></label>
+        <label>Children<select name="children">{[0, 1, 2, 3, 4].map((n) => <option>{n}</option>)}</select></label>
+        <label>Rooms<select name="rooms">{[1, 2, 3, 4, 5].map((n) => <option>{n}</option>)}</select></label>
+      </div>
+      <div class="grid2">
+        <label>Your Name<input type="text" name="name" placeholder="Full name" autocomplete="name" required /></label>
+        <label>Phone<input type="tel" name="phone" placeholder="+91" autocomplete="tel" required /></label>
+      </div>
+      <label>Message<textarea name="msg" rows="3" placeholder="Special requests, arrival time…"></textarea></label>
+      <div class="reserve__actions">
+        <button type="submit" class="btn btn--olive"><svg><use href="#i-wa" /></svg>Send via WhatsApp</button>
+        <button type="button" class="btn btn--outline" data-email-btn><svg><use href="#i-mail" /></svg>Send via Email</button>
+      </div>
+      <p class="fine">*{SITE.price} per room per night, all taxes extra. We’ll confirm availability shortly.</p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Rooms from '../components/Rooms.astro';
+import Experiences from '../components/Experiences.astro';
+import Reserve from '../components/Reserve.astro';
+import { img, SITE } from '../site';
+
+const offer = {
+  '@context': 'https://schema.org',
+  '@type': 'HotelRoom',
+  name: 'Super Deluxe Room',
+  description: 'King-size bed, air conditioning, Wi-Fi, TV, workstation and a private balcony with mountain views.',
+  bed: { '@type': 'BedDetails', typeOfBed: 'King', numberOfBeds: 1 },
+  offers: { '@type': 'Offer', price: '12000', priceCurrency: 'INR', url: `${SITE.url}/rooms/` },
+};
+---
+<Base title="Super Deluxe Rooms" description="Super Deluxe Rooms at Khwab Villa from Rs. 12,000 per night — king-size beds, AC, Wi-Fi, TV, workstation and private balconies with mountain views." image={img('bedroom-1')} jsonLd={[offer]}>
+  <PageHero kicker="Accommodation" title="Rooms &amp; <em>Suites</em>" image={img('bedroom-2')} text="Five elegant bedrooms with carved wood, khatamband ceilings and mountain views." crumbs={[{ href: '/rooms/', label: 'Rooms' }]} />
+  <div class="spacer"></div>
+  <Rooms />
+  <Experiences />
+  <Reserve />
+</Base>

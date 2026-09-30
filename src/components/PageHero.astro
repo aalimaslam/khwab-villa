@@ -1,0 +1,16 @@
+---
+interface Props { kicker: string; title: string; image: string; text?: string; crumbs?: { href: string; label: string }[] }
+const { kicker, title, image, text, crumbs = [] } = Astro.props;
+---
+<section class="page-hero">
+  <img src={image} alt="" loading="eager" fetchpriority="high" />
+  <div class="page-hero__inner container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      {crumbs.map((c) => <><span>/</span><a href={c.href}>{c.label}</a></>)}
+    </nav>
+    <p class="kicker kicker--light reveal">{kicker}</p>
+    <h1 class="reveal" set:html={title} />
+    {text && <p class="page-hero__text reveal">{text}</p>}
+  </div>
+</section>

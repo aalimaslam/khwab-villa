@@ -1,0 +1,273 @@
+{
+  "site": {
+    "name": "Khwab Villa",
+    "url": "https://khwabvilla.com/",
+    "crawl_date": "2026-09-30",
+    "notes": [
+      "Content was collected from the publicly accessible pages discovered on khwabvilla.com.",
+      "The Gallery page exposes gallery content primarily as images and did not expose image captions/text in the crawl output.",
+      "Repeated header/footer content is preserved where it is part of each page's accessible content."
+    ]
+  },
+  "pages": [
+    {
+      "title": "Khwab Villa | Home",
+      "url": "https://khwabvilla.com/",
+      "type": "home",
+      "content": {
+        "hero": [
+          "Your Perfect Getaway in Paradise!",
+          "Welcome To Khwab Villa",
+          "A Dream Retreat Amidst the Mountains!",
+          "Welcome To Khwab Villa",
+          "Where Every Stay Feels Like Home",
+          "Welcome To Khwab Villa",
+          "Luxury Stay, Breathtaking Views",
+          "Welcome To Khwab Villa"
+        ],
+        "reservation": {
+          "phone": [
+            "+91-8899211010",
+            "+91-8899004526"
+          ],
+          "fields": [
+            "Check in",
+            "Check out",
+            "Adults",
+            "Children",
+            "Rooms"
+          ],
+          "action": "Check Now"
+        },
+        "intro": {
+          "heading": "A Dream Stay in Kashmir’s Serenity!",
+          "name": "Khwab Villa",
+          "description": "Khwab Villa, nestled in Preng, Kangan, Ganderbal district, is a luxurious retreat offering a perfect blend of Kashmiri heritage and modern comfort. Surrounded by breathtaking mountains, lush gardens, and the serene Sindh River, this exquisite five-bedroom villa provides a peaceful escape from city life. With its traditional wooden façade and elegantly designed interiors, guests can enjoy a harmonious balance of nature and luxury."
+        },
+        "accommodation": {
+          "name": "Super Deluxe",
+          "price": "Rs. 12,000*/ Room",
+          "tax_note": "all taxes extra",
+          "description": "The Super Deluxe Rooms at Khwab Villa offer a perfect blend of elegance and comfort. Featuring plush king-size beds, air conditioning, Wi-Fi, TV, and a private balcony with stunning mountain views, these rooms provide a relaxing retreat."
+        },
+        "facilities": [
+          "Garden",
+          "Safety And Security",
+          "Indoor/Outdoor Games",
+          "Parking Area",
+          "Gazebo",
+          "CCTV Surveillance",
+          "BBQ Facility",
+          "Bonfire"
+        ],
+        "testimonials": [
+          {
+            "reviewer": "Rohit Thakur",
+            "label": "Guest review",
+            "text": "Khwab Villa is an absolute gem! The location is breathtaking, surrounded by mountains and lush gardens. The rooms were spacious, well-maintained, and beautifully decorated. Loved the bonfire and BBQ setup in the evenings. A perfect getaway for anyone looking for peace and luxury!"
+          },
+          {
+            "reviewer": "Neha Kapoor",
+            "label": "Guest review",
+            "text": "An unforgettable experience! The villa is a blend of modern comfort and Kashmiri heritage. The staff was friendly, and the food was delicious. Waking up to the mountain view from the balcony was a dream. Highly recommended for families and groups!"
+          }
+        ],
+        "attractions_preview": [
+          {
+            "name": "Manasbal Lake",
+            "description": "Manasbal Lake is a stunning water body known for its clear waters and blooming lotus flowers. Surrounded by lush greenery, it is a paradise for birdwatchers and nature lovers..."
+          },
+          {
+            "name": "Sindh River",
+            "description": "The Sindh River flows through the enchanting valleys of Kashmir, providing a serene setting for picnics and leisure walks. The river is famous for its pristine waters, offering a picturesque backdrop for photography...."
+          },
+          {
+            "name": "Naranag Temple",
+            "description": "The Naranag Temple complex is an ancient archaeological site dedicated to Lord Shiva. Built in the 8th century, these stone-carved ruins showcase the architectural brilliance of Kashmir’s past..."
+          },
+          {
+            "name": "Wayil – A Scenic Summer Retreat in Ganderbal",
+            "description": "Wayil, nestled in Ganderbal district, Jammu & Kashmir, is a picturesque destination known for its lush greenery, cool climate, and stunning mountain views..."
+          }
+        ],
+        "footer": {
+          "tagline": "Find Peace, Luxury, and Memories at Khwab Villa",
+          "description": "Nestled in Ganderbal’s scenic beauty, Khwab Villa features spacious rooms, modern amenities, a gazebo, and a bonfire setup. Ideal for families and groups, it provides a peaceful yet luxurious escape amidst nature.",
+          "address": "Preng, Kangan, Jammu & Kashmir - 191202",
+          "phone": [
+            "+91-8899211010",
+            "+91-8899004526"
+          ],
+          "email": "khwabvillakashmir@gmail.com",
+          "weather_link_text": "GANDERBAL WEATHER",
+          "copyright": "© Copyright 2025 Khwab Villa",
+          "designer": "Asiatech Inc"
+        }
+      }
+    },
+    {
+      "title": "About Us | Khwab Villa",
+      "url": "https://khwabvilla.com/about.php",
+      "type": "about",
+      "content": {
+        "heading": "About Us",
+        "name": "Khwab Villa",
+        "description": [
+          "Khwab Villa, nestled in Preng, Kangan, Ganderbal district, is a luxurious retreat offering a perfect blend of Kashmiri heritage and modern comfort. Surrounded by breathtaking mountains, lush gardens, and the serene Sindh River, this exquisite five-bedroom villa provides a peaceful escape from city life. With its traditional wooden façade and elegantly designed interiors, guests can enjoy a harmonious balance of nature and luxury.",
+          "The villa features a spacious front lawn, four enchanting gardens filled with walnut, cherry, and apricot trees, and a cozy library for relaxation. Whether you're seeking a quiet retreat or an adventurous getaway, Khwab Villa offers an unforgettable experience.",
+          "Designed to cater to both comfort and convenience, Khwab Villa is equipped with top-notch amenities, including Wi-Fi, air conditioning, a workstation, and a music system. Guests can unwind in the gazebo, enjoy a bonfire under the stars, or relish a BBQ evening in the beautiful outdoor space. The villa also boasts a well-stocked games room with board games, making it an ideal destination for families and groups.",
+          "With its proximity to attractions like Manasbal Lake, Naranag Temple, and Sonmarg, Khwab Villa serves as a gateway to exploring the untouched beauty of Ganderbal district while offering a luxurious home away from home."
+        ],
+        "facilities": [
+          "Garden",
+          "Safety And Security",
+          "Indoor/Outdoor Games",
+          "Parking Area",
+          "Gazebo",
+          "CCTV Surveillance",
+          "Fire Extinguisher",
+          "Free WiFi",
+          "Balcony/Terrace",
+          "Workstation",
+          "Water Purifier",
+          "Music System/Speaker",
+          "BBQ Facility",
+          "Refrigerator",
+          "Bonfire",
+          "Mountain View"
+        ],
+        "footer": {
+          "address": "Preng, Kangan, Jammu & Kashmir - 191202",
+          "phone": [
+            "+91-8899211010",
+            "+91-8899004526"
+          ],
+          "email": "khwabvillakashmir@gmail.com"
+        }
+      }
+    },
+    {
+      "title": "Super Deluxe Rooms | Khwab Villa",
+      "url": "https://khwabvilla.com/super-deluxe-rooms.php",
+      "type": "room",
+      "content": {
+        "heading": "Super Deluxe Rooms",
+        "description": "The Super Deluxe Rooms at Khwab Villa offer a perfect blend of elegance and comfort. Featuring plush king-size beds, air conditioning, Wi-Fi, TV, and a private balcony with stunning mountain views, these rooms provide a relaxing retreat. Guests can enjoy modern amenities like a workstation, wardrobe, geyser, toiletries, and a cozy seating area, ensuring a luxurious and peaceful stay in the heart of Ganderbal’s natural beauty.",
+        "amenities": [
+          "King-Size Bed",
+          "Air Conditioning",
+          "WiFi",
+          "Workstation",
+          "Wardrobe/Closet",
+          "Attached Bathroom",
+          "Power Backup",
+          "Geyser",
+          "Toiletries",
+          "Hair Dryer",
+          "Extra Mattress",
+          "Seating Area",
+          "Hangers",
+          "Towels"
+        ],
+        "help": {
+          "heading": "NEED HELP?",
+          "text": "If you have any question please don't hesitate to contact us",
+          "phone": "+91-8899211010",
+          "email": "khwabvillakashmir@gmail.com",
+          "address": "Preng, Kangan, Jammu & Kashmir - 191202"
+        }
+      }
+    },
+    {
+      "title": "Attractions | Khwab Villa",
+      "url": "https://khwabvilla.com/attractions.php",
+      "type": "attractions",
+      "content": {
+        "attractions": [
+          {
+            "name": "Manasbal Lake",
+            "distance": "Approx. 23.2 km",
+            "description": "Manasbal Lake is a stunning water body known for its clear waters and blooming lotus flowers. Surrounded by lush greenery, it is a paradise for birdwatchers and nature lovers. The lake also offers boating opportunities, making it a perfect spot for relaxation and photography amidst the breathtaking landscape of Kashmir."
+          },
+          {
+            "name": "Sindh River",
+            "distance": "Within Walking Distance",
+            "description": "The Sindh River flows through the enchanting valleys of Kashmir, providing a serene setting for picnics and leisure walks. The river is famous for its pristine waters, offering a picturesque backdrop for photography. Adventure enthusiasts can enjoy angling and rafting in its cool, rushing waters while soaking in the tranquility of the region."
+          },
+          {
+            "name": "Naranag Temple",
+            "distance": "Approx. 18.7 km",
+            "description": "The Naranag Temple complex is an ancient archaeological site dedicated to Lord Shiva. Built in the 8th century, these stone-carved ruins showcase the architectural brilliance of Kashmir’s past. Surrounded by lush meadows and mountains, the site is a favorite among trekkers and history enthusiasts seeking a glimpse into the region’s rich cultural heritage."
+          },
+          {
+            "name": "Wayil – A Scenic Summer Retreat in Ganderbal",
+            "distance": "Approx. 8.8 km",
+            "description": "Wayil, nestled in Ganderbal district, Jammu & Kashmir, is a picturesque destination known for its lush greenery, cool climate, and stunning mountain views. A popular summer retreat, it offers a peaceful escape for nature lovers, trekkers, and travelers seeking tranquility amidst Kashmir’s breathtaking landscapes and serene riverbanks."
+          },
+          {
+            "name": "Sonmarg",
+            "distance": "Approx. 47.9 km",
+            "description": "Sonmarg, meaning \"Meadow of Gold,\" is a breathtaking valley with snow-capped peaks, lush meadows, and gushing rivers. It is a hub for adventure activities such as trekking, camping, and horseback riding. During winter, it transforms into a wonderland, offering thrilling experiences like skiing and snowboarding, making it a must-visit destination for nature lovers."
+          },
+          {
+            "name": "Kheer Bhawani Temple",
+            "distance": "Approx. 18.4 km",
+            "description": "Kheer Bhawani Temple, located in Tulmulla, Ganderbal district, is a revered Hindu shrine dedicated to Goddess Ragnya Devi. Surrounded by chinar trees and a sacred spring, the temple is known for its mystical water that changes color. It attracts thousands of devotees, especially during Jyeshtha Ashtami."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Gallery | Khwab Villa",
+      "url": "https://khwabvilla.com/gallery.php",
+      "type": "gallery",
+      "content": {
+        "description": "The publicly accessible Gallery page contains gallery imagery but no image captions or textual gallery descriptions were exposed in the crawl output.",
+        "footer": {
+          "address": "Preng, Kangan, Jammu & Kashmir - 191202",
+          "phone": [
+            "+91-8899211010",
+            "+91-8899004526"
+          ],
+          "email": "khwabvillakashmir@gmail.com"
+        }
+      }
+    },
+    {
+      "title": "Contact Us | Khwab Villa",
+      "url": "https://khwabvilla.com/contact.php",
+      "type": "contact",
+      "content": {
+        "contact_details": {
+          "telephone": [
+            "+91-8899211010",
+            "+91-8899004526"
+          ],
+          "email": "khwabvillakashmir@gmail.com",
+          "address": "Preng, Kangan, Jammu & Kashmir - 191202"
+        },
+        "form": {
+          "heading": "Get in touch",
+          "fields": [
+            "Your Name *",
+            "Your Email *",
+            "Your Number *",
+            "Subject *"
+          ],
+          "button": "Send Message"
+        },
+        "description": "Khwab Villa in Preng, Kangan, Ganderbal district is a luxurious retreat surrounded by mountains and lush gardens. With five elegant rooms, a bonfire area, BBQ, board games, and a cozy library, it offers the perfect blend of comfort, nature, and relaxation."
+      }
+    }
+  ],
+  "sitewide_content": {
+    "name": "Khwab Villa",
+    "address": "Preng, Kangan, Jammu & Kashmir - 191202",
+    "phones": [
+      "+91-8899211010",
+      "+91-8899004526"
+    ],
+    "email": "khwabvillakashmir@gmail.com",
+    "primary_description": "Khwab Villa in Preng, Kangan, Ganderbal district is a luxurious retreat surrounded by mountains and lush gardens. With five elegant rooms, a bonfire area, BBQ, board games, and a cozy library, it offers the perfect blend of comfort, nature, and relaxation."
+  }
+}

@@ -1,0 +1,89 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { SITE } from '../../site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props { post: CollectionEntry<'blog'> }
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const all = await getCollection('blog');
+const related = all.filter((p) => p.id !== post.id).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const date = post.data.pubDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+const toc = headings.filter((h) => h.depth === 2);
+const url = new URL(`/blog/${post.id}/`, Astro.site).href;
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: new URL(post.data.cover, Astro.site).href,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  mainEntityOfPage: url,
+};
+const crumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Blogs', item: `${SITE.url}/blog/` },
+    { '@type': 'ListItem', position: 3, name: post.data.title, item: url },
+  ],
+};
+---
+<Base title={post.data.title} description={post.data.description} image={post.data.cover} type="article" publishedTime={post.data.pubDate} jsonLd={[article, crumbs]}>
+  <article class="post">
+    <header class="post__hero">
+      <img src={post.data.cover} alt={post.data.coverAlt} fetchpriority="high" />
+      <div class="post__hero-inner container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blogs</a></nav>
+        <span class="chip">{post.data.category}</span>
+        <h1>{post.data.title}</h1>
+        <div class="post-meta post-meta--light"><time datetime={post.data.pubDate.toISOString()}>{date}</time><span>·</span><span>{post.data.readingTime}</span></div>
+      </div>
+    </header>
+
+    <div class="container post__layout">
+      <aside class="post__aside">
+        {toc.length > 0 && (
+          <nav class="toc" aria-label="On this page">
+            <p class="kicker">On this page</p>
+            {toc.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+          </nav>
+        )}
+        <div class="aside-card">
+          <strong>Stay at Khwab Villa</strong>
+          <p>Super Deluxe rooms from {SITE.price}/night in Preng, Kangan.</p>
+          <a href="/contact/#reserve" class="btn btn--olive btn--sm">Check Availability <svg><use href="#i-arrow" /></svg></a>
+        </div>
+      </aside>
+      <div class="prose">
+        <p class="prose__lead">{post.data.description}</p>
+        <Content />
+        <div class="share">
+          <span>Share</span>
+          <a href={`https://wa.me/?text=${encodeURIComponent(post.data.title + ' ' + url)}`} target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg><use href="#i-wa" /></svg></a>
+          <a href={`mailto:?subject=${encodeURIComponent(post.data.title)}&body=${encodeURIComponent(url)}`} aria-label="Share by email"><svg><use href="#i-mail" /></svg></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="section journal">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="kicker">Keep Reading</p><h2>More <em>Blogs</em></h2></div>
+      </div>
+      <div class="post-grid">{related.map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </section>
+</Base>

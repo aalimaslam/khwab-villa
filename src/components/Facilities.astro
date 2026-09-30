@@ -1,0 +1,14 @@
+---
+import { FACILITIES } from '../site';
+---
+<section class="section facilities">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="kicker reveal">Facilities</p>
+      <h2 class="reveal">Everything for an <em>Effortless Stay</em></h2>
+    </div>
+    <div class="fac reveal">
+      {FACILITIES.map(([icon, label]) => <div><svg><use href={`#f-${icon}`} /></svg>{label}</div>)}
+    </div>
+  </div>
+</section>
