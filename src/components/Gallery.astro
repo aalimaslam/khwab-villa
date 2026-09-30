@@ -1,10 +1,13 @@
 ---
-import { GALLERY, img } from '../site';
+import { GALLERY } from '../site';
+import Photo from './Photo.astro';
+import { photoUrl } from '../lib/images';
 interface Props { limit?: number; heading?: boolean }
 const { limit, heading = true } = Astro.props;
 const items = limit ? GALLERY.slice(0, limit) : GALLERY;
 // Repeating 10-tile pattern that fills a 4-column grid exactly (16 cells)
 const SIZES = ['big', 'tall', '', '', '', 'wide', '', 'tall', '', ''];
+const full = await Promise.all(items.map((g) => photoUrl(g.src, 1200, 'webp')));
 ---
 <section class="section gallery" id="gallery">
   <div class="container">
@@ -22,8 +25,8 @@ const SIZES = ['big', 'tall', '', '', '', 'wide', '', 'tall', '', ''];
     </div>
     <div class="masonry" data-masonry>
       {items.map((g, i) => (
-        <a href={img(g.src)} data-cat={g.cat} data-cap={g.cap} class={SIZES[i % SIZES.length]}>
-          <img src={img(g.src)} alt={g.cap} loading="lazy" />
+        <a href={full[i]} data-cat={g.cat} data-cap={g.cap} class={SIZES[i % SIZES.length]}>
+          <Photo src={g.src} alt={g.cap} sizes={['big', 'wide'].includes(SIZES[i % SIZES.length]) ? '(max-width: 760px) 100vw, 50vw' : '(max-width: 760px) 50vw, 25vw'} />
         </a>
       ))}
     </div>

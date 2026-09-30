@@ -166,7 +166,32 @@ if (form) {
   });
   $('[data-email-btn]', form)?.addEventListener('click', () => {
     if (!form.reportValidity()) return;
-    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Reservation enquiry')}&body=${encodeURIComponent(message())}`;
+    const to = form.dataset.email!;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
+    const subject = `Reservation enquiry${name ? ` — ${name}` : ''}`;
+    const body = message();
+    const q = (o: Record<string, string>) => new URLSearchParams(o).toString().replace(/\+/g, '%20');
+
+    // An <a> click is more dependable than assigning location.href for mailto: links
+    const mailto = document.createElement('a');
+    mailto.href = `mailto:${to}?${q({ subject, body })}`;
+    mailto.click();
+
+    // Many computers have no default mail app, so offer webmail and copy as backups
+    const panel = $('[data-mail-fallback]', form)!;
+    $<HTMLAnchorElement>('[data-gmail]', panel)!.href = `https://mail.google.com/mail/?${q({ view: 'cm', fs: '1', to, su: subject, body })}`;
+    $<HTMLAnchorElement>('[data-outlook]', panel)!.href = `https://outlook.live.com/mail/0/deeplink/compose?${q({ to, subject, body })}`;
+    const copy = $('[data-copy]', panel)!;
+    copy.textContent = 'Copy details';
+    copy.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(`To: ${to}\nSubject: ${subject}\n\n${body}`);
+        copy.textContent = 'Copied ✓';
+      } catch {
+        copy.textContent = `Email us at ${to}`;
+      }
+    };
+    panel.hidden = false;
   });
 
   /* Hero quick-book carries values into the reservation form */

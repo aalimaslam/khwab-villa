@@ -2,6 +2,8 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
+import Photo from '../../components/Photo.astro';
+import { photoUrl } from '../../lib/images';
 import { SITE } from '../../site';
 
 export async function getStaticPaths() {
@@ -23,7 +25,7 @@ const article = {
   '@type': 'BlogPosting',
   headline: post.data.title,
   description: post.data.description,
-  image: new URL(post.data.cover, Astro.site).href,
+  image: new URL(await photoUrl(post.data.cover, 1200, 'jpg'), Astro.site).href,
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
@@ -43,7 +45,7 @@ const crumbs = {
 <Base title={post.data.title} description={post.data.description} image={post.data.cover} type="article" publishedTime={post.data.pubDate} jsonLd={[article, crumbs]}>
   <article class="post">
     <header class="post__hero">
-      <img src={post.data.cover} alt={post.data.coverAlt} fetchpriority="high" />
+      <Photo src={post.data.cover} alt={post.data.coverAlt} sizes="100vw" loading="eager" fetchpriority="high" />
       <div class="post__hero-inner container">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blogs</a></nav>
         <span class="chip">{post.data.category}</span>

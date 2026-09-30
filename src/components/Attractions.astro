@@ -1,10 +1,11 @@
 ---
-import { ATTRACTIONS, img } from '../site';
+import { ATTRACTIONS } from '../site';
+import Photo from './Photo.astro';
 ---
 <section class="section explore" id="explore">
   <div class="container explore__grid">
     <div class="explore__media reveal">
-      <img src={img('drone-night')} alt="Khwab Villa lit up in the valley at dusk" loading="lazy" />
+      <Photo src="drone-night" alt="Khwab Villa lit up in the valley at dusk" sizes="(max-width: 1100px) 100vw, 45vw" />
       <div class="explore__note"><strong>Sindh River</strong><span>Within walking distance</span></div>
     </div>
     <div>

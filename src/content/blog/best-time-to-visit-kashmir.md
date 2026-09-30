@@ -2,7 +2,7 @@
 title: "The Best Time to Visit Kashmir: A Season-by-Season Guide"
 description: "Spring blossoms, cool summers, golden autumns and snowy winters — how to choose the right season for your stay in Kangan and the Sindh Valley."
 pubDate: 2026-09-12
-cover: /images/blossom-view.jpg
+cover: ../../assets/images/blossom-view.jpg
 coverAlt: Khwab Villa framed by pink spring blossoms
 category: Travel Guide
 readingTime: 6 min read

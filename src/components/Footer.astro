@@ -3,6 +3,22 @@ import { SITE } from '../site';
 const year = new Date().getFullYear();
 ---
 <footer class="footer">
+  <div class="container footer__map">
+    <div class="footer__map-info">
+      <p class="kicker kicker--light">Find Us</p>
+      <h3>Preng, Kangan <em>Ganderbal</em></h3>
+      <p>{SITE.address.full}. The Sindh River is a short walk away, and Sonmarg is under 50 km up the valley.</p>
+      <a href={SITE.maps} target="_blank" rel="noopener" class="btn btn--cream btn--sm">Open in Google Maps <svg><use href="#i-arrow" /></svg></a>
+    </div>
+    <div class="footer__map-frame">
+      <iframe
+        src={SITE.mapEmbed}
+        title="Khwab Villa on Google Maps"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
   <div class="container footer__grid">
     <div>
       <a href="/" class="brand brand--light"><span>Khwab Villa</span></a>

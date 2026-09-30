@@ -2,7 +2,7 @@
 title: "Manasbal Lake: Lotus Blooms, Birdwatching and Boat Rides"
 description: "Often called the supreme gem of Kashmir’s lakes, Manasbal is a peaceful half-day escape from Khwab Villa. Here’s what to expect."
 pubDate: 2026-07-28
-cover: /images/garden-table.jpg
+cover: ../../assets/images/garden-table.jpg
 coverAlt: Breakfast table set on a sunny lawn with mountains in the distance
 category: Day Trips
 readingTime: 4 min read

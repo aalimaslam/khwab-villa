@@ -2,7 +2,7 @@
 title: "What to Pack for a Kashmir Holiday (For Every Season)"
 description: "A practical, season-by-season packing list for your stay in Kangan — plus the things we already provide at the villa so you can travel lighter."
 pubDate: 2026-04-10
-cover: /images/balcony-view.jpg
+cover: ../../assets/images/balcony-view.jpg
 coverAlt: Sunny balcony overlooking the valley and distant mountains
 category: Travel Tips
 readingTime: 4 min read

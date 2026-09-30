@@ -1,5 +1,5 @@
 ---
-import { img } from '../site';
+import Photo from './Photo.astro';
 const items = [
   ['bonfire-villa', 'Bonfire Under the Stars', 'Gather around a crackling fire as the mountains fade to silhouettes.', 'Bonfire on the lawn with the villa lit in the background'],
   ['garden-table', 'Breakfast in the Orchard', 'Fresh fruit, pastries and juice laid out beneath walnut and apricot trees.', 'Breakfast table set on the garden lawn'],
@@ -19,7 +19,7 @@ const items = [
     <div class="exp">
       {items.map(([src, title, text, alt], i) => (
         <article class="exp__card reveal" style={`--d:${i * 0.1}s`}>
-          <img src={img(src)} alt={alt} loading="lazy" />
+          <Photo src={src} alt={alt} sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 25vw" widths={[400, 800]} />
           <div><span>{String(i + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p></div>
         </article>
       ))}

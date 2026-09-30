@@ -2,7 +2,7 @@
 title: "A Day Trip to Sonmarg from Khwab Villa"
 description: "The Meadow of Gold is under 50 km from Kangan. Here’s how to plan a perfect day in Sonmarg — what to see, what to pack and when to set off."
 pubDate: 2026-08-20
-cover: /images/drone-valley.jpg
+cover: ../../assets/images/drone-valley.jpg
 coverAlt: Aerial view of the Sindh valley with mountains and the river
 category: Day Trips
 readingTime: 5 min read

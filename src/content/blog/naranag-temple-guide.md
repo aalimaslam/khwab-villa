@@ -2,7 +2,7 @@
 title: "Naranag Temple: Kashmir’s 8th-Century Stone Sanctuary"
 description: "Ancient Shiva temples, alpine meadows and the gateway to some of Kashmir’s great treks — a guide to visiting Naranag from Kangan."
 pubDate: 2026-06-30
-cover: /images/drone-night.jpg
+cover: ../../assets/images/drone-night.jpg
 coverAlt: Aerial view of Khwab Villa lit up at dusk in the mountain valley
 category: Heritage
 readingTime: 5 min read

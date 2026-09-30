@@ -2,9 +2,8 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Gallery from '../components/Gallery.astro';
-import { img } from '../site';
 ---
 <Base title="Gallery" description="Photos of Khwab Villa — the heritage façade, Super Deluxe rooms, garden breakfasts, bonfire evenings and aerial views of the Kangan valley.">
-  <PageHero kicker="Gallery" title="Moments at <em>Khwab Villa</em>" image={img('drone-night')} crumbs={[{ href: '/gallery/', label: 'Gallery' }]} />
+  <PageHero kicker="Gallery" title="Moments at <em>Khwab Villa</em>" image="drone-night" crumbs={[{ href: '/gallery/', label: 'Gallery' }]} />
   <Gallery heading={false} />
 </Base>

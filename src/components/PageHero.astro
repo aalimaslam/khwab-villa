@@ -1,9 +1,10 @@
 ---
+import Photo from './Photo.astro';
 interface Props { kicker: string; title: string; image: string; text?: string; crumbs?: { href: string; label: string }[] }
 const { kicker, title, image, text, crumbs = [] } = Astro.props;
 ---
 <section class="page-hero">
-  <img src={image} alt="" loading="eager" fetchpriority="high" />
+  <Photo src={image} alt="" sizes="100vw" loading="eager" fetchpriority="high" />
   <div class="page-hero__inner container">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>

@@ -3,12 +3,14 @@ import '../styles/global.css';
 import Icons from '../components/Icons.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE, img } from '../site';
+import type { ImageMetadata } from 'astro';
+import { SITE } from '../site';
+import { photo, photoUrl } from '../lib/images';
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  image?: ImageMetadata;
   type?: 'website' | 'article';
   floatingHeader?: boolean;
   jsonLd?: Record<string, unknown>[];
@@ -18,7 +20,7 @@ interface Props {
 const {
   title,
   description = SITE.description,
-  image = img('night-view'),
+  image = photo('night-view'),
   type = 'website',
   floatingHeader = false,
   jsonLd = [],
@@ -27,7 +29,7 @@ const {
 
 const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | Luxury Villa Stay in Kangan, Kashmir`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL(image, Astro.site);
+const ogImage = new URL(await photoUrl(image, 1200, 'jpg'), Astro.site);
 
 const lodging = {
   '@context': 'https://schema.org',
@@ -35,7 +37,7 @@ const lodging = {
   name: SITE.name,
   url: SITE.url,
   description: SITE.description,
-  image: new URL(img('night-view'), Astro.site).href,
+  image: new URL(await photoUrl('night-view', 1200, 'jpg'), Astro.site).href,
   telephone: SITE.phones[0],
   email: SITE.email,
   priceRange: '₹₹₹',

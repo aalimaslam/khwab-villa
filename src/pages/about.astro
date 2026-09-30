@@ -5,10 +5,9 @@ import About from '../components/About.astro';
 import Facilities from '../components/Facilities.astro';
 import Reviews from '../components/Reviews.astro';
 import Band from '../components/Band.astro';
-import { img } from '../site';
 ---
 <Base title="About Us" description="Discover Khwab Villa — a five-bedroom Kashmiri heritage retreat in Preng, Kangan with orchard gardens, a gazebo, bonfire, BBQ, games room and cozy library.">
-  <PageHero kicker="Our Story" title="About <em>Khwab Villa</em>" image={img('front-view-1')} text="Kashmiri heritage and modern comfort, beside the Sindh River." crumbs={[{ href: '/about/', label: 'About' }]} />
+  <PageHero kicker="Our Story" title="About <em>Khwab Villa</em>" image="front-view-1" text="Kashmiri heritage and modern comfort, beside the Sindh River." crumbs={[{ href: '/about/', label: 'About' }]} />
   <About full />
   <Band />
   <Facilities />

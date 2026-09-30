@@ -1,10 +1,11 @@
 ---
-import { img, SITE } from '../site';
+import { SITE } from '../site';
+import Photo from './Photo.astro';
 ---
 <section class="section reserve" id="reserve">
   <div class="container reserve__card reveal">
     <div class="reserve__img">
-      <img src={img('night-view')} alt="Khwab Villa at dusk" loading="lazy" />
+      <Photo src="night-view" alt="Khwab Villa at dusk" sizes="(max-width: 760px) 100vw, 45vw" />
       <div class="reserve__contact">
         <p class="kicker kicker--light">Need help?</p>
         <h3>Talk to us directly</h3>
@@ -33,6 +34,14 @@ import { img, SITE } from '../site';
       <div class="reserve__actions">
         <button type="submit" class="btn btn--olive"><svg><use href="#i-wa" /></svg>Send via WhatsApp</button>
         <button type="button" class="btn btn--outline" data-email-btn><svg><use href="#i-mail" /></svg>Send via Email</button>
+      </div>
+      <div class="mail-fallback" data-mail-fallback hidden aria-live="polite">
+        <p>Opening your email app…<span>Nothing opened? Send the same enquiry another way:</span></p>
+        <div class="mail-fallback__opts">
+          <a class="btn btn--outline btn--sm" data-gmail target="_blank" rel="noopener">Gmail</a>
+          <a class="btn btn--outline btn--sm" data-outlook target="_blank" rel="noopener">Outlook</a>
+          <button type="button" class="btn btn--outline btn--sm" data-copy>Copy details</button>
+        </div>
       </div>
       <p class="fine">*{SITE.price} per room per night, all taxes extra. We’ll confirm availability shortly.</p>
     </form>

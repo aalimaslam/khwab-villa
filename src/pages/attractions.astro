@@ -3,7 +3,8 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Attractions from '../components/Attractions.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
-import { img, ATTRACTIONS } from '../site';
+import { ATTRACTIONS } from '../site';
+import { photo } from '../lib/images';
 
 const list = {
   '@context': 'https://schema.org',
@@ -12,8 +13,8 @@ const list = {
   itemListElement: ATTRACTIONS.map((a, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'TouristAttraction', name: a.name, description: a.text } })),
 };
 ---
-<Base title="Nearby Attractions" description="Explore around Khwab Villa: the Sindh River, Wayil, Kheer Bhawani Temple, Naranag Temple, Manasbal Lake and Sonmarg — with distances from the villa." image={img('drone-valley')} jsonLd={[list]}>
-  <PageHero kicker="Explore" title="Around <em>Ganderbal</em>" image={img('drone-valley')} text="Rivers, lakes, ancient temples and the Meadow of Gold — all within easy reach." crumbs={[{ href: '/attractions/', label: 'Attractions' }]} />
+<Base title="Nearby Attractions" description="Explore around Khwab Villa: the Sindh River, Wayil, Kheer Bhawani Temple, Naranag Temple, Manasbal Lake and Sonmarg — with distances from the villa." image={photo('drone-valley')} jsonLd={[list]}>
+  <PageHero kicker="Explore" title="Around <em>Ganderbal</em>" image="drone-valley" text="Rivers, lakes, ancient temples and the Meadow of Gold — all within easy reach." crumbs={[{ href: '/attractions/', label: 'Attractions' }]} />
   <Attractions />
   <BlogTeaser />
 </Base>

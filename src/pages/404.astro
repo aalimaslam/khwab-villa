@@ -1,10 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import { img } from '../site';
+import Photo from '../components/Photo.astro';
 ---
 <Base title="Page Not Found">
   <section class="page-hero page-hero--tall">
-    <img src={img('drone-night')} alt="" />
+    <Photo src="drone-night" alt="" sizes="100vw" loading="eager" />
     <div class="page-hero__inner container">
       <p class="kicker kicker--light">404</p>
       <h1>Lost in the <em>Mountains</em></h1>

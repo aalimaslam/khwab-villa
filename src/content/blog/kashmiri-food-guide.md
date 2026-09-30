@@ -2,7 +2,7 @@
 title: "A Taste of Kashmir: Dishes to Try During Your Stay"
 description: "From saffron kahwa and noon chai to the legendary Wazwan feast — a guide to Kashmiri flavours, and how we bring them to the table at Khwab Villa."
 pubDate: 2026-05-18
-cover: /images/chef-breakfast.jpg
+cover: ../../assets/images/chef-breakfast.jpg
 coverAlt: Khwab Villa's chef serving a breakfast spread on the lawn
 category: Food & Culture
 readingTime: 5 min read

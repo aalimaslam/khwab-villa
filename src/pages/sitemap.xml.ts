@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { GALLERY, img } from '../site';
+import { GALLERY } from '../site';
+import { photoUrl } from '../lib/images';
 
 const PAGES: { path: string; changefreq: string; priority: string; images?: string[] }[] = [
   { path: '/', changefreq: 'weekly', priority: '1.0', images: ['night-view', 'front-view-1', 'drone-night'] },
@@ -19,6 +20,8 @@ export const GET: APIRoute = async ({ site }) => {
   const today = new Date().toISOString().slice(0, 10);
   const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+  const imgs = async (names: string[] = []) => Promise.all(names.map((n) => photoUrl(n, 1200, 'jpg')));
+
   const entry = (loc: string, lastmod: string, changefreq: string, priority: string, images: string[] = []) =>
     `  <url>
     <loc>${esc(loc)}</loc>
@@ -28,16 +31,16 @@ export const GET: APIRoute = async ({ site }) => {
   </url>`;
 
   const urls = [
-    ...PAGES.map((p) => entry(u(p.path), today, p.changefreq, p.priority, (p.images ?? []).map(img))),
-    ...posts.map((p) =>
+    ...(await Promise.all(PAGES.map(async (p) => entry(u(p.path), today, p.changefreq, p.priority, await imgs(p.images))))),
+    ...(await Promise.all(posts.map(async (p) =>
       entry(
         u(`/blog/${p.id}/`),
         (p.data.updatedDate ?? p.data.pubDate).toISOString().slice(0, 10),
         'monthly',
         '0.6',
-        [p.data.cover],
+        [await photoUrl(p.data.cover, 1200, 'jpg')],
       ),
-    ),
+    ))),
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
