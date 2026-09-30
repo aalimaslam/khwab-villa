@@ -13,9 +13,7 @@ $$('.reveal').forEach((el) => io.observe(el));
 const topbar = $('#topbar');
 const hero = $('.hero');
 if (topbar?.classList.contains('topbar--float') && hero) {
-  const onScroll = () => topbar.classList.toggle('show', scrollY > hero.offsetHeight * 0.6);
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  new IntersectionObserver(([e]) => topbar.classList.toggle('show', !e.isIntersecting), { rootMargin: '-40% 0px 0px 0px' }).observe(hero);
 }
 const menuBtn = $('#menuBtn');
 menuBtn?.addEventListener('click', () => {
@@ -112,12 +110,15 @@ const lbShow = (n: number) => {
   lbImg!.alt = a.dataset.cap ?? '';
   lbCap!.textContent = `${a.dataset.cap ?? ''} · ${lbI + 1} / ${lbItems.length}`;
 };
-const lbClose = () => { lb?.classList.remove('open'); lb?.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+let lbReturn: HTMLElement | null = null;
+const lbClose = () => { lb?.classList.remove('open'); lb?.setAttribute('inert', ''); document.body.style.overflow = ''; lbReturn?.focus(); };
 $$<HTMLAnchorElement>('[data-masonry] a').forEach((a) => a.addEventListener('click', (e) => {
   e.preventDefault();
   lbItems = $$<HTMLAnchorElement>('[data-masonry] a:not(.hide)');
   lbShow(lbItems.indexOf(a));
-  lb?.classList.add('open'); lb?.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+  lbReturn = a;
+  lb?.removeAttribute('inert'); lb?.classList.add('open'); document.body.style.overflow = 'hidden';
+  $<HTMLButtonElement>('.lb-close', lb!)?.focus();
 }));
 if (lb) {
   $('.lb-close', lb)?.addEventListener('click', lbClose);
@@ -209,13 +210,17 @@ if (form) {
 /* Parallax band */
 const bandBg = $('.band__bg');
 if (bandBg && !reduced) {
-  const band = bandBg.parentElement!;
-  const onScroll = () => {
+  const band = bandBg.closest('.band')!;
+  let ticking = false;
+  const update = () => {
+    ticking = false;
     const r = band.getBoundingClientRect();
-    if (r.bottom < 0 || r.top > innerHeight) return;
     const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
     bandBg.style.transform = `translateY(${p * -60}px)`;
   };
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { addEventListener('scroll', onScroll, { passive: true }); onScroll(); }
+    else removeEventListener('scroll', onScroll);
+  }).observe(band);
 }

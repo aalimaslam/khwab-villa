@@ -14,7 +14,7 @@ interface Props {
   [key: `data-${string}`]: string;
 }
 
-const { src, alt, sizes = '100vw', widths = [480, 800, 1200], class: cls, loading = 'lazy', fetchpriority, ...rest } = Astro.props;
+const { src, alt, sizes = '100vw', widths = [360, 540, 720, 960, 1200], class: cls, loading = 'lazy', fetchpriority, ...rest } = Astro.props;
 const image = typeof src === 'string' ? photo(src) : src;
 
 // Never upscale: drop widths larger than the original and cap with the original width
@@ -24,8 +24,8 @@ const largest = Math.max(...finalWidths);
 
 // Per-format quality — each encoder has its own scale; these look identical to the originals at a fraction of the size
 const [avif, webp, fallback] = await Promise.all([
-  getImage({ src: image, widths: finalWidths, format: 'avif', quality: 50 }),
-  getImage({ src: image, widths: finalWidths, format: 'webp', quality: 70 }),
+  getImage({ src: image, widths: finalWidths, format: 'avif', quality: 45 }),
+  getImage({ src: image, widths: finalWidths, format: 'webp', quality: 68 }),
   getImage({ src: image, width: largest, format: 'jpg', quality: 75 }),
 ]);
 ---

@@ -1,0 +1,16 @@
+{
+  "name": "Khwab Villa — Luxury Stay in Kangan, Kashmir",
+  "short_name": "Khwab Villa",
+  "description": "A luxurious five-bedroom Kashmiri retreat in Preng, Kangan, Ganderbal.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#262a1b",
+  "theme_color": "#262a1b",
+  "lang": "en-IN",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

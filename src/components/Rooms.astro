@@ -23,7 +23,7 @@ const slides = [
     <div class="rooms__grid">
       <div class="slider reveal" data-slider>
         <div class="slider__track">
-          {slides.map(([s, alt]) => <Photo src={s} alt={alt} sizes="(max-width: 1100px) 100vw, 58vw" />)}
+          {slides.map(([s, alt]) => <Photo src={s} alt={alt} sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1100px) calc(100vw - 88px), 56vw" />)}
         </div>
         <button class="icon-btn icon-btn--light slider__prev" aria-label="Previous photo"><svg><use href="#i-left" /></svg></button>
         <button class="icon-btn icon-btn--light slider__next" aria-label="Next photo"><svg><use href="#i-right" /></svg></button>

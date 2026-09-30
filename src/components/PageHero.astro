@@ -10,8 +10,8 @@ const { kicker, title, image, text, crumbs = [] } = Astro.props;
       <a href="/">Home</a>
       {crumbs.map((c) => <><span>/</span><a href={c.href}>{c.label}</a></>)}
     </nav>
-    <p class="kicker kicker--light reveal">{kicker}</p>
-    <h1 class="reveal" set:html={title} />
-    {text && <p class="page-hero__text reveal">{text}</p>}
+    <p class="kicker kicker--light rise">{kicker}</p>
+    <h1 class="rise" style="--d:.08s" set:html={title} />
+    {text && <p class="page-hero__text rise" style="--d:.16s">{text}</p>}
   </div>
 </section>

@@ -42,7 +42,7 @@ const crumbs = {
   ],
 };
 ---
-<Base title={post.data.title} description={post.data.description} image={post.data.cover} type="article" publishedTime={post.data.pubDate} jsonLd={[article, crumbs]}>
+<Base title={post.data.title} description={post.data.description} image={post.data.cover} imageAlt={post.data.coverAlt} type="article" publishedTime={post.data.pubDate} modifiedTime={post.data.updatedDate} section={post.data.category} jsonLd={[article, crumbs]}>
   <article class="post">
     <header class="post__hero">
       <Photo src={post.data.cover} alt={post.data.coverAlt} sizes="100vw" loading="eager" fetchpriority="high" />

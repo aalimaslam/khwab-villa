@@ -17,6 +17,7 @@ export const SITE = {
   email: 'khwabvillakashmir@gmail.com',
   price: 'Rs. 12,000',
   maps: 'https://maps.google.com/?cid=2185475502506331522',
+  geo: { lat: 34.277258, lng: 74.864232 },
   mapEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3296.8742856381855!2d74.86423177629824!3d34.27725780581433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e179f7d131fae3%3A0x1e545e63f0354d82!2skhwab%20Villa%20%7C%20A%20Luxury%20Stay!5e0!3m2!1sen!2sin!4v1790770486176!5m2!1sen!2sin',
 };

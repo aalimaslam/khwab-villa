@@ -29,28 +29,28 @@ import Photo from '../components/Photo.astro';
 
       <div class="hero__copy">
         <div class="hero__headline">
-          <h1 class="reveal">Your <em>Dream</em> Stay in Kashmir</h1>
-          <div class="hero__faces reveal" style="--d:.15s" aria-hidden="true">
+          <h1 class="rise">Your <em>Dream</em> Stay in Kashmir</h1>
+          <div class="hero__faces rise" style="--d:.15s" aria-hidden="true">
             <Photo src="bedroom-6" alt="" class="f1" sizes="60px" widths={[120]} />
             <Photo src="bonfire-villa" alt="" class="f2" sizes="52px" widths={[120]} />
             <Photo src="breakfast-table" alt="" class="f3" sizes="44px" widths={[120]} />
             <span class="f4">5<small>rooms</small></span>
           </div>
         </div>
-        <p class="eyebrow reveal" style="--d:.1s">A dream retreat amidst the mountains</p>
-        <div class="hero__intro reveal" style="--d:.2s">
+        <p class="eyebrow rise" style="--d:.1s">A dream retreat amidst the mountains</p>
+        <div class="hero__intro rise" style="--d:.2s">
           <p>Nestled in Preng, Kangan, Khwab Villa blends Kashmiri heritage with modern comfort — five elegant bedrooms, orchard gardens and the Sindh River just a stroll away.</p>
           <a href="#about" class="btn btn--olive">Explore More <svg><use href="#i-arrow" /></svg></a>
         </div>
-        <div class="stats reveal" style="--d:.3s">
+        <div class="stats rise" style="--d:.3s">
           <div><strong data-count="5">05</strong><span>Luxury Bedrooms</span></div>
           <div><strong data-count="4">04</strong><span>Orchard Gardens</span></div>
           <div><strong data-count="16" data-suffix="+">16+</strong><span>Amenities</span></div>
         </div>
       </div>
 
-      <a href="/rooms/" class="hero__room reveal" style="--d:.4s">
-        <Photo src="bedroom-5" alt="Super Deluxe bedroom with carved wooden bed and mountain-facing windows" sizes="(max-width: 1100px) 100vw, 42vw" loading="eager" />
+      <a href="/rooms/" class="hero__room">
+        <Photo src="bedroom-5" alt="Super Deluxe bedroom with carved wooden bed and mountain-facing windows" sizes="(max-width: 760px) calc(100vw - 36px), (max-width: 1100px) calc(100vw - 52px), 42vw" loading="eager" fetchpriority="high" />
         <span class="chip"><svg><use href="#i-pin" /></svg>Preng, Kangan</span>
         <span class="icon-btn icon-btn--light heart" aria-hidden="true"><svg><use href="#i-heart" /></svg></span>
         <div class="hero__room-info">
@@ -63,8 +63,8 @@ import Photo from '../components/Photo.astro';
     <div class="hero__visual">
       <div class="hero__slides" data-hero-slides>
         <Photo src="night-view" alt="Khwab Villa glowing at dusk against the mountains" class="is-active" sizes="(max-width: 1100px) 100vw, 54vw" loading="eager" fetchpriority="high" />
-        <Photo src="front-view-1" alt="Khwab Villa front lawn in autumn" sizes="(max-width: 1100px) 100vw, 54vw" />
-        <Photo src="drone-night" alt="Aerial view of Khwab Villa at night in the valley" sizes="(max-width: 1100px) 100vw, 54vw" />
+        <Photo src="front-view-1" alt="Khwab Villa front lawn in autumn" sizes="(max-width: 1100px) 100vw, 54vw" fetchpriority="low" />
+        <Photo src="drone-night" alt="Aerial view of Khwab Villa at night in the valley" sizes="(max-width: 1100px) 100vw, 54vw" fetchpriority="low" />
       </div>
       <div class="hero__shade"></div>
 
