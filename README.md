@@ -2,7 +2,6 @@
 
 Astro site for Khwab Villa, Preng, Kangan (Kashmir).
 
-
 ```bash
 npm install
 npm run dev      # http://localhost:4321
