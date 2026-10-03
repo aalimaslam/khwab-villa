@@ -12,8 +12,8 @@ export const SITE = {
     country: 'IN',
     full: 'Preng, Kangan, Jammu & Kashmir - 191202',
   },
-  phones: ['+91-8899211010', '+91-8899004526'],
-  whatsapp: '918899004526',
+  phones: ['+91-8899004525', '+91-8899004526'], // first = reservations (WhatsApp, "Contact Us", structured data)
+  whatsapp: '918899004525',
   email: 'khwabvillakashmir@gmail.com',
   price: 'Rs. 30,000',
   maps: 'https://maps.google.com/?cid=2185475502506331522',
