@@ -9,6 +9,7 @@ npm run build    # static output in dist/
 npm run icons    # regenerate favicon.ico, apple-touch-icon and app icons in public/
 ```
 
+
 ## Where things live
 
 - `src/site.ts` — contact details, price, facilities, attractions, gallery list
