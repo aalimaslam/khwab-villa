@@ -13,10 +13,10 @@ const offer = {
   name: 'Super Deluxe Room',
   description: 'King-size bed, air conditioning, Wi-Fi, TV, workstation and a private balcony with mountain views.',
   bed: { '@type': 'BedDetails', typeOfBed: 'King', numberOfBeds: 1 },
-  offers: { '@type': 'Offer', price: '12000', priceCurrency: 'INR', url: `${SITE.url}/rooms/` },
+  offers: { '@type': 'Offer', price: '30000', priceCurrency: 'INR', url: `${SITE.url}/rooms/` },
 };
 ---
-<Base title="Super Deluxe Rooms" description="Super Deluxe Rooms at Khwab Villa from Rs. 12,000 per night — king-size beds, AC, Wi-Fi, TV, workstation and private balconies with mountain views." image={photo('bedroom-1')} imageAlt="Super Deluxe room with king bed and carved khatamband ceiling" jsonLd={[offer]}>
+<Base title="Super Deluxe Rooms" description="Super Deluxe Rooms at Khwab Villa from Rs. 30,000 per night — king-size beds, AC, Wi-Fi, TV, workstation and private balconies with mountain views." image={photo('bedroom-1')} imageAlt="Super Deluxe room with king bed and carved khatamband ceiling" jsonLd={[offer]}>
   <PageHero kicker="Accommodation" title="Rooms &amp; <em>Suites</em>" image="bedroom-2" text="Five elegant bedrooms with carved wood, khatamband ceilings and mountain views." crumbs={[{ href: '/rooms/', label: 'Rooms' }]} />
   <div class="spacer"></div>
   <Rooms />

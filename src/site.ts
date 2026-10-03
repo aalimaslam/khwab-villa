@@ -15,7 +15,7 @@ export const SITE = {
   phones: ['+91-8899211010', '+91-8899004526'],
   whatsapp: '918899004526',
   email: 'khwabvillakashmir@gmail.com',
-  price: 'Rs. 12,000',
+  price: 'Rs. 30,000',
   maps: 'https://maps.google.com/?cid=2185475502506331522',
   geo: { lat: 34.277258, lng: 74.864232 },
   mapEmbed:
